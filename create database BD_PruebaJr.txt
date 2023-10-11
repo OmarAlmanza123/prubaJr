@@ -1,0 +1,51 @@
+create database BD_PruebaJr
+
+create table Alumno(
+id int not null primary key,
+nombre varchar(255) not null,
+contraseña varchar(100) not null,
+Rol Varchar(20)
+);
+create table Maestro(
+id int not null primary key,
+nombre varchar(255) not null,
+contraseña varchar(100) not null,
+Rol Varchar(20)
+);
+
+create table Materia(
+Id int not null primary key,
+NombreMateria varchar(200) not null,
+Descripcion varchar(255) not null,
+MaestroId int, 
+foreign Key (MaestroID) references Maestro(id)
+
+);
+
+CREATE TABLE Inscripciones (
+    ID INT PRIMARY KEY,
+    EstudentID INT,
+    MateriasID INT,
+    FOREIGN KEY (EstudentID) REFERENCES Alumno(id),
+    FOREIGN KEY (MateriasID) REFERENCES Materia(Id)
+);
+CREATE TABLE Calificacion (
+    ID INT PRIMARY KEY,
+    EstudianteID INT,
+    MateriaID INT,
+    Calificacion DECIMAL(5,2),
+    FOREIGN KEY (EstudianteID) REFERENCES Alumno(id),
+    FOREIGN KEY (MateriaID) REFERENCES Materia(Id)
+);
+
+select *from Alumno
+select *from Materia
+select *from Maestro
+select *from Calificacion
+select *from Inscripciones
+insert into Alumno
+([id],[nombre],[contraseña],[Rol])
+values
+(1, N'Juan', 'Relaja12', 'Alumno'),
+(2, N'Raul', 'Campus34', 'Alumno')
+go

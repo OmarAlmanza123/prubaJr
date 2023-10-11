@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Escolar</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión Escolar</h1>
+        <label for="role">Selecciona tu rol:</label>
+        <select id="role">
+            <option value="alumno">Alumno</option>
+            <option value="profesor">Profesor</option>
+        </select>
+        <button onclick="showOptions()">Continuar</button>
+    </div>
+
+    <div id="alumnoOptions" class="options hidden">
+        <button onclick="verMaterias()">Ver Materias</button>
+        <button onclick="verCalificaciones()">Ver Calificaciones</button>
+        <button onclick="darDeBajaMateria()">Dar de Baja Materia</button>
+    </div>
+
+    <div id="profesorOptions" class="options hidden">
+        <button onclick="verMaterias()">Ver Materias</button>
+        <button onclick="verEstudiantes()">Ver Estudiantes</button>
+        <button onclick="calificarEstudiantes()">Calificar Estudiantes</button>
+        <button onclick="verTotalesAprobadosReprobados()">Ver Totales Aprobados/Reprobados</button>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="node.js"></script>
+</body>
+</html>
